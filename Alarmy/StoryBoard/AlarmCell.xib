@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="22:45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eN-Nc-J3h">
-                        <rect key="frame" x="16" y="6" width="46" height="21"/>
+                        <rect key="frame" x="16" y="6" width="148" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -37,7 +37,7 @@
                 <outlet property="switchAlarm" destination="97w-GB-LYQ" id="Wib-Jq-acd"/>
                 <outlet property="timeLabel" destination="8eN-Nc-J3h" id="8J3-VK-nWY"/>
             </connections>
-            <point key="canvasLocation" x="139" y="149"/>
+            <point key="canvasLocation" x="137.68115942028987" y="148.66071428571428"/>
         </tableViewCell>
     </objects>
 </document>

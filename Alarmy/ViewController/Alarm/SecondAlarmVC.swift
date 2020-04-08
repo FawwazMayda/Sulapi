@@ -9,6 +9,8 @@
 import UIKit
 
 class SecondAlarmVC: UIViewController {
+    
+    var alarmies = [Alarm]()
 
     @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
@@ -18,6 +20,16 @@ class SecondAlarmVC: UIViewController {
         tableview.register(UINib(nibName: "AlarmCell", bundle: nil), forCellReuseIdentifier: "AlarmCell")
         tableview.delegate = self
         tableview.dataSource = self
+        alarmies.append(Alarm())
+        var nAlarm = Alarm()
+        nAlarm.hour = 18
+        nAlarm.minute = 28
+        alarmies.append(nAlarm)
+        var nAlarm2 = Alarm()
+        nAlarm2.hour = 22
+        nAlarm2.minute = 56
+        nAlarm2.isOn = true
+        alarmies.append(nAlarm2)
     }
     
 
@@ -35,12 +47,16 @@ class SecondAlarmVC: UIViewController {
 
 extension SecondAlarmVC: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return alarmies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AlarmCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AlarmCell", for: indexPath) as! AlarmCell
+        cell.alarmData = alarmies[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
     
     

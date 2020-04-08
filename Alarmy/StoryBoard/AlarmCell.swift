@@ -13,6 +13,12 @@ class AlarmCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var switchAlarm: UISwitch!
     
+    var alarmData : Alarm? {
+        didSet {
+            timeLabel.text = "\(self.alarmData?.hour ?? 10):\(self.alarmData?.minute ?? 20)"
+            switchAlarm.isOn = self.alarmData?.isOn ?? false
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,7 +27,6 @@ class AlarmCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     

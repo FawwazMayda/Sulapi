@@ -26,6 +26,7 @@
 		4D45E44E243C7D3500637259 /* ThirdAlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45E44D243C7D3500637259 /* ThirdAlarmVC.swift */; };
 		4DDCE25E243E13E20021097B /* AlarmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDCE25C243E13E20021097B /* AlarmCell.swift */; };
 		4DDCE25F243E13E20021097B /* AlarmCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DDCE25D243E13E20021097B /* AlarmCell.xib */; };
+		4DDCE261243E16040021097B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDCE260243E16040021097B /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		4D45E44D243C7D3500637259 /* ThirdAlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdAlarmVC.swift; sourceTree = "<group>"; };
 		4DDCE25C243E13E20021097B /* AlarmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCell.swift; sourceTree = "<group>"; };
 		4DDCE25D243E13E20021097B /* AlarmCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmCell.xib; sourceTree = "<group>"; };
+		4DDCE260243E16040021097B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		4D45E451243C7D4E00637259 /* Alarm */ = {
 			isa = PBXGroup;
 			children = (
+				4DDCE260243E16040021097B /* Model.swift */,
 				4D45E449243C7D1D00637259 /* FirstAlarmVC.swift */,
 				4D45E44B243C7D2900637259 /* SecondAlarmVC.swift */,
 				4D45E44D243C7D3500637259 /* ThirdAlarmVC.swift */,
@@ -227,6 +230,7 @@
 				4D45E446243C7CFD00637259 /* FirstMeditationVC.swift in Sources */,
 				4D45E44C243C7D2900637259 /* SecondAlarmVC.swift in Sources */,
 				4D45E423243C754400637259 /* AppDelegate.swift in Sources */,
+				4DDCE261243E16040021097B /* Model.swift in Sources */,
 				4D45E444243C7CE600637259 /* SecondSoundVC.swift in Sources */,
 				4D45E44E243C7D3500637259 /* ThirdAlarmVC.swift in Sources */,
 				4D45E448243C7D1100637259 /* SecondMeditationVC.swift in Sources */,
