@@ -10,6 +10,7 @@ import UIKit
 
 class ThirdAlarmVC: UIViewController {
 
+    @IBOutlet weak var datePicker: UIDatePicker!
     override func viewDidLoad() {
         super.viewDidLoad()
 
