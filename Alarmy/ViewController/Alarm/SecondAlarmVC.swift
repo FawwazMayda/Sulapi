@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondAlarmVC: UIViewController {
+class SecondAlarmVC: UIViewController, AlarmDelegate {
     
     var alarmies = [Alarm]()
 
@@ -32,6 +32,31 @@ class SecondAlarmVC: UIViewController {
         alarmies.append(nAlarm2)
     }
     
+    @IBAction func addTapped(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "SecondToThirdAlarm", sender: self)
+    }
+    
+    @IBAction func unwindToSecond(_ unwindSegue: UIStoryboardSegue) {
+        let sourceViewController = unwindSegue.source
+        print("Unwind from Third Alarm VC")
+        
+        // Use data from the view controller which initiated the unwind segue
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier=="SecondToThirdAlarm" {
+            let vc = segue.destination as! ThirdAlarmVC
+            vc.delegate = self
+        }
+    }
+    
+    func newAlarm(e: Alarm) {
+        self.alarmies.append(e)
+        print("Get new alarm")
+        self.tableview.reloadData()
+    }
+
+    
 
     /*
     // MARK: - Navigation
@@ -44,6 +69,7 @@ class SecondAlarmVC: UIViewController {
     */
 
 }
+
 
 extension SecondAlarmVC: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -19,3 +19,7 @@ class Alarm {
         isOn = false
     }
 }
+
+protocol AlarmDelegate {
+    mutating func newAlarm(e : Alarm)
+}

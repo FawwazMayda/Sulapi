@@ -9,11 +9,16 @@
 import UIKit
 
 class ThirdAlarmVC: UIViewController {
-
+    
+    var delegate : AlarmDelegate?
+    var newAlarm : Alarm = Alarm()
     @IBOutlet weak var datePicker: UIDatePicker!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        datePicker.datePickerMode = .time
+        newAlarm.hour = 19
+        newAlarm.minute = 22
+        newAlarm.isOn = true
         // Do any additional setup after loading the view.
     }
     
@@ -27,5 +32,17 @@ class ThirdAlarmVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func doneTapped(_ sender: UIBarButtonItem) {
+        delegate?.newAlarm(e: newAlarm)
+        print("Sending Alarm")
+        performSegue(withIdentifier: "ThirdToSecondAlarmUnwind", sender: nil)
+        
+    }
+    
+    
+    @IBAction func datePickerScrolled(_ sender: UIDatePicker) {
+        
+        print("Picker: \(datePicker.date)")
+    }
+    
 }
