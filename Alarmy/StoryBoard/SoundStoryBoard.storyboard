@@ -71,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ig-In-0WM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="792.75362318840587" y="-40.178571428571423"/>
+            <point key="canvasLocation" x="712" y="-40"/>
         </scene>
         <!--Second SoundVC-->
         <scene sceneID="JOZ-GY-Vb1">
@@ -102,6 +102,9 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8FQ-53-1la">
                                 <rect key="frame" x="30" y="655" width="354" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="scrubSlider:" destination="e0A-Eh-Na4" eventType="valueChanged" id="e7U-Aq-2Og"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUw-Fo-Khe">
                                 <rect key="frame" x="191" y="716" width="32" height="32"/>
@@ -111,7 +114,7 @@
                                     <action selector="didTapButton" destination="e0A-Eh-Na4" eventType="touchUpInside" id="HD4-mq-GSJ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="06.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wic-5Y-hPY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wic-5Y-hPY">
                                 <rect key="frame" x="20" y="676" width="64" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
@@ -134,12 +137,13 @@
                         <outlet property="button" destination="jUw-Fo-Khe" id="7hC-6b-tPS"/>
                         <outlet property="durationLabel" destination="cp1-IM-1ih" id="Hzk-uO-CLZ"/>
                         <outlet property="image" destination="PMV-Eq-gLQ" id="gQB-Wo-ZDu"/>
+                        <outlet property="musicPlayerSlider" destination="8FQ-53-1la" id="gb8-lh-Un7"/>
                         <outlet property="titleLabel" destination="vjq-r4-tDK" id="Tqq-DH-r6A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihy-IB-rFL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1578" y="-40"/>
+            <point key="canvasLocation" x="1488" y="-40"/>
         </scene>
         <!--Sounds-->
         <scene sceneID="QZc-io-3Ao">

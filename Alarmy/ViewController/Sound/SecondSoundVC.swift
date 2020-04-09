@@ -15,19 +15,30 @@ class SecondSoundVC: UIViewController {
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var musicPlayerSlider: UISlider!
     
     var titleTemp = ""
     var durationTemp = ""
     var imageTemp = ""
     
+    var musicDuration:TimeInterval = 0
     var player: AVAudioPlayer?
     var currentTime: TimeInterval = 0
     
+    @IBAction func scrubSlider(_ sender: Any) {
+        if let player = player{
+            player.stop()
+            player.currentTime =        TimeInterval(musicPlayerSlider.value)
+            player.prepareToPlay()
+            player.play()
+        }
+    }
     @IBAction func didTapButton() {
         let urlString = Bundle.main.path(forResource: "\(titleTemp)", ofType: "mp3")
 
         if let player = player, player.isPlaying {
             //stop playback
+            musicDuration = player.duration
             button.setImage(UIImage(named: "playBtn"), for: .normal)
             currentTime = player.currentTime
             player.pause()
@@ -66,6 +77,7 @@ class SecondSoundVC: UIViewController {
         titleLabel.text = titleTemp
         durationLabel.text = durationTemp
         image.image = UIImage(named: imageTemp)
+        
     }
     
 }
