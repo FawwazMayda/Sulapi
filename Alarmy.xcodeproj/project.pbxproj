@@ -24,6 +24,17 @@
 		4D45E44A243C7D1D00637259 /* FirstAlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45E449243C7D1D00637259 /* FirstAlarmVC.swift */; };
 		4D45E44C243C7D2900637259 /* SecondAlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45E44B243C7D2900637259 /* SecondAlarmVC.swift */; };
 		4D45E44E243C7D3500637259 /* ThirdAlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45E44D243C7D3500637259 /* ThirdAlarmVC.swift */; };
+		F651BE8A243F2B0200CA6FF9 /* Enjoy Light.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F651BE7F243F2B0200CA6FF9 /* Enjoy Light.mp3 */; };
+		F651BE8B243F2B0200CA6FF9 /* Bright Future.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F651BE80243F2B0200CA6FF9 /* Bright Future.mp3 */; };
+		F651BE8C243F2B0200CA6FF9 /* Lovely Journey.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F651BE81243F2B0200CA6FF9 /* Lovely Journey.mp3 */; };
+		F651BE8D243F2B0200CA6FF9 /* Happy Time.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F651BE82243F2B0200CA6FF9 /* Happy Time.mp3 */; };
+		F651BE8E243F2B0200CA6FF9 /* Peaceful Night.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F651BE83243F2B0200CA6FF9 /* Peaceful Night.mp3 */; };
+		F651BE8F243F2B0200CA6FF9 /* Early Morning.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F651BE84243F2B0200CA6FF9 /* Early Morning.mp3 */; };
+		F651BE90243F2B0200CA6FF9 /* Always.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F651BE85243F2B0200CA6FF9 /* Always.mp3 */; };
+		F651BE91243F2B0200CA6FF9 /* Missing You.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F651BE86243F2B0200CA6FF9 /* Missing You.mp3 */; };
+		F651BE92243F2B0200CA6FF9 /* Sleep Tight.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F651BE87243F2B0200CA6FF9 /* Sleep Tight.mp3 */; };
+		F651BE93243F2B0200CA6FF9 /* Sunny Day.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F651BE88243F2B0200CA6FF9 /* Sunny Day.mp3 */; };
+		F651BE94243F2B0200CA6FF9 /* Bedtime Lullaby.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F651BE89243F2B0200CA6FF9 /* Bedtime Lullaby.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +57,17 @@
 		4D45E449243C7D1D00637259 /* FirstAlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAlarmVC.swift; sourceTree = "<group>"; };
 		4D45E44B243C7D2900637259 /* SecondAlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondAlarmVC.swift; sourceTree = "<group>"; };
 		4D45E44D243C7D3500637259 /* ThirdAlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdAlarmVC.swift; sourceTree = "<group>"; };
+		F651BE7F243F2B0200CA6FF9 /* Enjoy Light.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Enjoy Light.mp3"; path = "../../../../../../Downloads/Assets/Sounds/Instruments/Enjoy Light.mp3"; sourceTree = "<group>"; };
+		F651BE80243F2B0200CA6FF9 /* Bright Future.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Bright Future.mp3"; path = "../../../../../../Downloads/Assets/Sounds/Instruments/Bright Future.mp3"; sourceTree = "<group>"; };
+		F651BE81243F2B0200CA6FF9 /* Lovely Journey.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Lovely Journey.mp3"; path = "../../../../../../Downloads/Assets/Sounds/Instruments/Lovely Journey.mp3"; sourceTree = "<group>"; };
+		F651BE82243F2B0200CA6FF9 /* Happy Time.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Happy Time.mp3"; path = "../../../../../../Downloads/Assets/Sounds/Instruments/Happy Time.mp3"; sourceTree = "<group>"; };
+		F651BE83243F2B0200CA6FF9 /* Peaceful Night.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Peaceful Night.mp3"; path = "../../../../../../Downloads/Assets/Sounds/Instruments/Peaceful Night.mp3"; sourceTree = "<group>"; };
+		F651BE84243F2B0200CA6FF9 /* Early Morning.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Early Morning.mp3"; path = "../../../../../../Downloads/Assets/Sounds/Instruments/Early Morning.mp3"; sourceTree = "<group>"; };
+		F651BE85243F2B0200CA6FF9 /* Always.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Always.mp3; path = ../../../../../../Downloads/Assets/Sounds/Instruments/Always.mp3; sourceTree = "<group>"; };
+		F651BE86243F2B0200CA6FF9 /* Missing You.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Missing You.mp3"; path = "../../../../../../Downloads/Assets/Sounds/Instruments/Missing You.mp3"; sourceTree = "<group>"; };
+		F651BE87243F2B0200CA6FF9 /* Sleep Tight.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Sleep Tight.mp3"; path = "../../../../../../Downloads/Assets/Sounds/Instruments/Sleep Tight.mp3"; sourceTree = "<group>"; };
+		F651BE88243F2B0200CA6FF9 /* Sunny Day.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Sunny Day.mp3"; path = "../../../../../../Downloads/Assets/Sounds/Instruments/Sunny Day.mp3"; sourceTree = "<group>"; };
+		F651BE89243F2B0200CA6FF9 /* Bedtime Lullaby.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Bedtime Lullaby.mp3"; path = "../../../../../../Downloads/Assets/Sounds/Instruments/Bedtime Lullaby.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +137,7 @@
 		4D45E44F243C7D3A00637259 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				F651BE7E243F2ADC00CA6FF9 /* Songs */,
 				4D45E441243C7CCF00637259 /* FirstSoundVC.swift */,
 				4D45E443243C7CE600637259 /* SecondSoundVC.swift */,
 			);
@@ -138,6 +161,24 @@
 				4D45E44D243C7D3500637259 /* ThirdAlarmVC.swift */,
 			);
 			path = Alarm;
+			sourceTree = "<group>";
+		};
+		F651BE7E243F2ADC00CA6FF9 /* Songs */ = {
+			isa = PBXGroup;
+			children = (
+				F651BE85243F2B0200CA6FF9 /* Always.mp3 */,
+				F651BE89243F2B0200CA6FF9 /* Bedtime Lullaby.mp3 */,
+				F651BE80243F2B0200CA6FF9 /* Bright Future.mp3 */,
+				F651BE84243F2B0200CA6FF9 /* Early Morning.mp3 */,
+				F651BE7F243F2B0200CA6FF9 /* Enjoy Light.mp3 */,
+				F651BE82243F2B0200CA6FF9 /* Happy Time.mp3 */,
+				F651BE81243F2B0200CA6FF9 /* Lovely Journey.mp3 */,
+				F651BE86243F2B0200CA6FF9 /* Missing You.mp3 */,
+				F651BE83243F2B0200CA6FF9 /* Peaceful Night.mp3 */,
+				F651BE87243F2B0200CA6FF9 /* Sleep Tight.mp3 */,
+				F651BE88243F2B0200CA6FF9 /* Sunny Day.mp3 */,
+			);
+			path = Songs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,10 +241,21 @@
 			files = (
 				4D45E431243C754500637259 /* LaunchScreen.storyboard in Resources */,
 				4D45E42E243C754500637259 /* Assets.xcassets in Resources */,
+				F651BE8F243F2B0200CA6FF9 /* Early Morning.mp3 in Resources */,
+				F651BE8B243F2B0200CA6FF9 /* Bright Future.mp3 in Resources */,
 				4D45E43D243C79D200637259 /* MeditationStoryBoard.storyboard in Resources */,
+				F651BE8E243F2B0200CA6FF9 /* Peaceful Night.mp3 in Resources */,
+				F651BE93243F2B0200CA6FF9 /* Sunny Day.mp3 in Resources */,
 				4D45E42C243C754400637259 /* Main.storyboard in Resources */,
+				F651BE8D243F2B0200CA6FF9 /* Happy Time.mp3 in Resources */,
+				F651BE91243F2B0200CA6FF9 /* Missing You.mp3 in Resources */,
+				F651BE8C243F2B0200CA6FF9 /* Lovely Journey.mp3 in Resources */,
 				4D45E43B243C782300637259 /* SoundStoryBoard.storyboard in Resources */,
+				F651BE92243F2B0200CA6FF9 /* Sleep Tight.mp3 in Resources */,
+				F651BE90243F2B0200CA6FF9 /* Always.mp3 in Resources */,
 				4D45E43F243C7A6600637259 /* AlarmStoryBoard.storyboard in Resources */,
+				F651BE94243F2B0200CA6FF9 /* Bedtime Lullaby.mp3 in Resources */,
+				F651BE8A243F2B0200CA6FF9 /* Enjoy Light.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,7 +421,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z35HSPF5XB;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Alarmy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -387,7 +439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z35HSPF5XB;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Alarmy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
