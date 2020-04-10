@@ -41,6 +41,10 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
         loadData()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        saveData()
+    }
+    
     @IBAction func addTapped(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "SecondToThirdAlarm", sender: self)
     }
