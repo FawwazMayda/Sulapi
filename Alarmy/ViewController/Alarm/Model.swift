@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Alarm {
+class Alarm: Codable {
     var hour : Int
     var minute : Int
     var isOn : Bool

@@ -9,6 +9,7 @@
 import UIKit
 
 class SecondAlarmVC: UIViewController, AlarmDelegate {
+    var dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Alarm.plist")
     
     var alarmies = [Alarm]()
 
@@ -20,6 +21,8 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
         tableview.register(UINib(nibName: "AlarmCell", bundle: nil), forCellReuseIdentifier: "AlarmCell")
         tableview.delegate = self
         tableview.dataSource = self
+        print(dataFilePath)
+        /*
         alarmies.append(Alarm())
         var nAlarm = Alarm()
         nAlarm.hour = 18
@@ -30,6 +33,9 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
         nAlarm2.minute = 56
         nAlarm2.isOn = true
         alarmies.append(nAlarm2)
+        //saveData()
+        */
+        loadData()
     }
     
     @IBAction func addTapped(_ sender: UIBarButtonItem) {
@@ -54,10 +60,29 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
         self.alarmies.append(e)
         print("Get new alarm")
         self.tableview.reloadData()
+        saveData()
     }
 
+    // MARK: PersistData
     
-
+    func saveData() {
+        do {
+            let data = try PropertyListEncoder().encode(self.alarmies)
+            try data.write(to: dataFilePath!)
+        } catch {
+            print("Error Encoding data")
+        }
+    }
+    
+    func loadData() {
+        do {
+            if let data = try? Data(contentsOf: dataFilePath!) {
+                self.alarmies = try PropertyListDecoder().decode([Alarm].self, from: data)
+            }
+        } catch {
+            print("Error Decoding data")
+        }
+    }
     /*
     // MARK: - Navigation
 
