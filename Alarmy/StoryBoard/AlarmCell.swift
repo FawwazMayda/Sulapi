@@ -15,8 +15,12 @@ class AlarmCell: UITableViewCell {
     
     var alarmData : Alarm? {
         didSet {
-            timeLabel.text = "\(self.alarmData?.hour ?? 10):\(self.alarmData?.minute ?? 20)"
-            switchAlarm.isOn = self.alarmData?.isOn ?? false
+            if let alarm = alarmData {
+                let hourLabel = alarm.hour>=10 ? String(alarm.hour): "0\(alarm.hour)"
+                let minuteLabel = alarm.minute>=10 ? String(alarm.minute) : "0\(alarm.minute)"
+                timeLabel.text = "\(hourLabel):\(minuteLabel)"
+                switchAlarm.isOn = self.alarmData?.isOn ?? false
+            }
         }
     }
     

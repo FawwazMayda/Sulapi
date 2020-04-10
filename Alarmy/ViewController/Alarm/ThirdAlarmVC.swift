@@ -11,7 +11,9 @@ import Foundation
 class ThirdAlarmVC: UIViewController {
     
     var delegate : AlarmDelegate?
-    var newAlarm : Alarm = Alarm()
+    var editAlarm : Alarm?
+    var index : Int?
+    //var newAlarm : Alarm = Alarm()
     @IBOutlet weak var datePicker: UIDatePicker!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,15 +36,21 @@ class ThirdAlarmVC: UIViewController {
     }
     */
     @IBAction func doneTapped(_ sender: UIBarButtonItem) {
-        let df = DateFormatter()
-        df.dateFormat = "HH:mm"
-        let strDate = df.string(from: datePicker.date)
-        let arr = strDate.components(separatedBy: ":")
-        var newAlarm = Alarm()
-        newAlarm.hour = Int(arr[0])!
-        newAlarm.minute = Int(arr[1])!
-        newAlarm.isOn = true
-        delegate?.newAlarm(e: newAlarm)
+        
+        if let anAlarm = editAlarm,let id = index {
+            //We are going to edit an Alarm
+            let (hour,minute) = parseAlarm(d: datePicker.date)
+            anAlarm.hour = hour
+            anAlarm.minute = minute
+            delegate?.editAlarm(index: id, e: anAlarm)
+        } else {
+            let (hour,minute) = parseAlarm(d: datePicker.date)
+            let newAlarm = Alarm()
+            newAlarm.hour = hour
+            newAlarm.minute = minute
+            newAlarm.isOn = true
+            delegate?.newAlarm(e: newAlarm)
+        }
         print("Sending Alarm")
         performSegue(withIdentifier: "ThirdToSecondAlarmUnwind", sender: nil)
         
@@ -54,6 +62,14 @@ class ThirdAlarmVC: UIViewController {
         df.dateFormat = "HH:mm"
         let strDate =  df.string(from: datePicker.date)
         print("Picker: \(strDate))")
+    }
+    
+    func parseAlarm(d : Date)-> (Int,Int) {
+        let df = DateFormatter()
+        df.dateFormat = "HH:mm"
+        let strDate = df.string(from: d)
+        let arr = strDate.components(separatedBy: ":")
+        return (Int(arr[0])!, Int(arr[1])!)
     }
     
 }

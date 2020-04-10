@@ -9,6 +9,7 @@
 import UIKit
 
 class SecondAlarmVC: UIViewController, AlarmDelegate {
+    
     var dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Alarm.plist")
     
     var alarmies = [Alarm]()
@@ -62,6 +63,12 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
         self.tableview.reloadData()
         saveData()
     }
+    
+    func editAlarm(index : Int,e : Alarm) {
+        self.alarmies[index] = e
+        print("Edit an alarm")
+        self.tableview.reloadData()
+    }
 
     // MARK: PersistData
     
@@ -94,7 +101,6 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
     */
 
 }
-
 
 extension SecondAlarmVC: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

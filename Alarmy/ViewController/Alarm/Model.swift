@@ -22,4 +22,5 @@ class Alarm: Codable {
 
 protocol AlarmDelegate {
     mutating func newAlarm(e : Alarm)
+    mutating func editAlarm(index : Int,e : Alarm)
 }
