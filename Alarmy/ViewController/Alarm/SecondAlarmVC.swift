@@ -13,6 +13,8 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
     var dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Alarm.plist")
     
     var alarmies = [Alarm]()
+    var editAlarm : Alarm?
+    var editAlarmIndex : Int?
 
     @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
@@ -54,6 +56,10 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
         if segue.identifier=="SecondToThirdAlarm" {
             let vc = segue.destination as! ThirdAlarmVC
             vc.delegate = self
+            if let sendedAlarm = editAlarm,let sendedIndex = editAlarmIndex {
+                vc.editAlarm = sendedAlarm
+                vc.index = sendedIndex
+            }
         }
     }
     
@@ -67,6 +73,9 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
     func editAlarm(index : Int,e : Alarm) {
         self.alarmies[index] = e
         print("Edit an alarm")
+        self.editAlarm = nil
+        self.editAlarmIndex = nil
+        self.saveData()
         self.tableview.reloadData()
     }
 
@@ -114,6 +123,14 @@ extension SecondAlarmVC: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if alarmies[indexPath.row].isOn {
+            print("Bisa di edit")
+            editAlarm = alarmies[indexPath.row]
+            editAlarmIndex = indexPath.row
+            performSegue(withIdentifier: "SecondToThirdAlarm", sender: self)
+        } else {
+            print("Tidak bisa di edit")
+        }
     }
     
     

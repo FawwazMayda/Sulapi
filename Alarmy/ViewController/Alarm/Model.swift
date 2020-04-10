@@ -12,11 +12,27 @@ class Alarm: Codable {
     var hour : Int
     var minute : Int
     var isOn : Bool
+    var onDay = [String]()
+    var strDate : String {
+        let hourLabel = self.hour>=10 ? String(self.hour): "0\(self.hour)"
+        let minuteLabel = self.minute>=10 ? String(self.minute) : "0\(self.minute)"
+       return "\(hourLabel):\(minuteLabel)"
+    }
     
     init() {
         hour = 0
         minute = 0
         isOn = false
+    }
+    
+    func setAlarm() {
+        //Fungsi untuk membuat Notif
+        print("Set Alarm")
+    }
+    
+    func unSetAlarm() {
+        //Fungsi untuk menghapus notif
+        print("Unset Alarm")
     }
 }
 
