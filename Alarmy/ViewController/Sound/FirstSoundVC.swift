@@ -42,26 +42,26 @@ class FirstSoundVC: UIViewController {
     }
 
     let instrumentSounds = [
-        Sound(soundTitle: "Always", soundDuration: "30 Min", soundImage: "guitar"),
-        Sound(soundTitle: "Bedtime Lullaby", soundDuration: "30 Min", soundImage: "sleep"),
-        Sound(soundTitle: "Bright Future", soundDuration: "30 Min", soundImage: "guitar"),
-        Sound(soundTitle: "Early Morning", soundDuration: "30 Min", soundImage: "sleep"),
-        Sound(soundTitle: "Enjoy Light", soundDuration: "30 Min", soundImage: "guitar"),
-        Sound(soundTitle: "Happy Time", soundDuration: "30 Min", soundImage: "sleep"),
-        Sound(soundTitle: "Lovely Journey", soundDuration: "30 Min", soundImage: "guitar"),
-        Sound(soundTitle: "Missing You", soundDuration: "30 Min", soundImage: "sleep"),
-        Sound(soundTitle: "Peacefull Night", soundDuration: "30 Min", soundImage: "guitar"),
-        Sound(soundTitle: "Sleep Tight", soundDuration: "30 Min", soundImage: "sleep"),
-        Sound(soundTitle: "Sunny Day", soundDuration: "30 Min", soundImage: "guitar")
+        Sound(soundTitle: "music1", soundDuration: "30 Min", soundImage: "guitar"),
+        Sound(soundTitle: "music2", soundDuration: "30 Min", soundImage: "sleep"),
+        Sound(soundTitle: "music3", soundDuration: "30 Min", soundImage: "guitar"),
+        Sound(soundTitle: "music4", soundDuration: "30 Min", soundImage: "sleep"),
+        Sound(soundTitle: "music1", soundDuration: "30 Min", soundImage: "guitar"),
+        Sound(soundTitle: "music2", soundDuration: "30 Min", soundImage: "sleep"),
+        Sound(soundTitle: "music3", soundDuration: "30 Min", soundImage: "guitar"),
+        Sound(soundTitle: "music4", soundDuration: "30 Min", soundImage: "sleep"),
+        Sound(soundTitle: "music1", soundDuration: "30 Min", soundImage: "guitar"),
+        Sound(soundTitle: "music2", soundDuration: "30 Min", soundImage: "sleep"),
+        Sound(soundTitle: "music3", soundDuration: "30 Min", soundImage: "guitar")
     ]
     
     let natureSounds = [
-        Sound(soundTitle: "Forest Wind", soundDuration: "15 Min", soundImage: "sleep"),
-        Sound(soundTitle: "Calm River", soundDuration: "15 Min", soundImage: "guitar"),
-        Sound(soundTitle: "Heavy Thunder", soundDuration: "15 Min", soundImage: "sleep"),
-        Sound(soundTitle: "Slowly Rain", soundDuration: "15 Min", soundImage: "guitar"),
-        Sound(soundTitle: "Harmony Waves", soundDuration: "15 Min", soundImage: "sleep"),
-        Sound(soundTitle: "Bird Melody", soundDuration: "15 Min", soundImage: "guitar"),
+        Sound(soundTitle: "music1", soundDuration: "15 Min", soundImage: "sleep"),
+        Sound(soundTitle: "music1", soundDuration: "15 Min", soundImage: "guitar"),
+        Sound(soundTitle: "music1", soundDuration: "15 Min", soundImage: "sleep"),
+        Sound(soundTitle: "music1", soundDuration: "15 Min", soundImage: "guitar"),
+        Sound(soundTitle: "music1", soundDuration: "15 Min", soundImage: "sleep"),
+        Sound(soundTitle: "music1", soundDuration: "15 Min", soundImage: "guitar"),
     ]
     
     override func viewDidLoad() {

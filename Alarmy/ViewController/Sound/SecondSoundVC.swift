@@ -1,3 +1,5 @@
+
+
 //
 //  SecondSoundVC.swift
 //  Alarmy
@@ -24,60 +26,97 @@ class SecondSoundVC: UIViewController {
     var musicDuration:TimeInterval = 0
     var player: AVAudioPlayer?
     var currentTime: TimeInterval = 0
+     var audioPlayer = AVAudioPlayer()
+       var musicPath = Bundle.main.bundleURL.appendingPathComponent("music1.mp3")
+    var playingNumber = 0
+   var playStatus: Bool = true
+     var playTime = 0.0
+    
+       let playImage = UIImage(named: "play_btn")
+       let pauseImage = UIImage(named: "pause_btn")
+       
+    @objc func updateSlider() {
+          musicPlayerSlider.value = Float(audioPlayer.currentTime)
+          
+
+          if musicPlayerSlider.value >= musicPlayerSlider.maximumValue - 0.15 {
+              playingNumber += 1
+              setMusic()
+          }
+      }
+    
+    
+    func setMusic() {
+     button.setImage(pauseImage, for: .normal)
+       var  s = Bundle.main.path(forResource: "\(titleTemp)", ofType: "mp3")
+      let url = Bundle.main.url(forResource: "\(titleTemp)", withExtension: "mp3")
+        musicPath = url!
+        do {
+            
+             audioPlayer = try AVAudioPlayer(contentsOf: url!)
+            
+        } catch {
+            print("Terjadi kesalahan selama pemutaran")
+        }
+        audioPlayer.prepareToPlay()
+        setStatusBar()
+        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.updateSlider), userInfo: nil, repeats: true)
+        audioPlayer.play()
+        
+    }
+    
+    func setStatusBar() {
+          let imageForThumb = UIImage(named: "img_circle.png")
+           musicPlayerSlider.setThumbImage(imageForThumb, for: .normal)
+          musicPlayerSlider.minimumTrackTintColor = UIColor.orange
+          musicPlayerSlider.maximumTrackTintColor = UIColor.gray
+          musicPlayerSlider.maximumValue = Float(audioPlayer.duration)
+ 
+      }
     
     @IBAction func scrubSlider(_ sender: Any) {
-        if let player = player{
-            player.stop()
-            player.currentTime =        TimeInterval(musicPlayerSlider.value)
-            player.prepareToPlay()
-            player.play()
-        }
+ 
+        audioPlayer.currentTime = TimeInterval(musicPlayerSlider.value)
     }
     @IBAction func didTapButton() {
+        
+              if playStatus == true {
+                  Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateSlider), userInfo: nil, repeats: true)
+                  audioPlayer.stop()
+                  playTime = audioPlayer.currentTime
+                  button.setImage(playImage, for: .normal)
+                  playStatus = false
+              } else {
+                  do {
+                      audioPlayer = try AVAudioPlayer(contentsOf: musicPath, fileTypeHint: nil)
+                      audioPlayer.currentTime = playTime
+                      audioPlayer.play()
+                      button.setImage(pauseImage, for: .normal)
+                      playStatus = true
+                  } catch {
+                      print("Terjadi kesalahan selama pemutaran")
+                  }
+              }
         let urlString = Bundle.main.path(forResource: "\(titleTemp)", ofType: "mp3")
-
-        if let player = player, player.isPlaying {
-            //stop playback
-            musicDuration = player.duration
-            button.setImage(UIImage(named: "playBtn"), for: .normal)
-            currentTime = player.currentTime
-            player.pause()
-
-        }else {
-            button.setImage(UIImage(named: "pauseBtn"), for: .normal)
-            do {
-                try AVAudioSession.sharedInstance().setMode(.default)
-                try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-                
-                guard let urlString = urlString else {
-                    return
-                }
-                
-                player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
-                
-                guard let player = player else {
-                    return
-                }
-                
-                if currentTime == 0 {
-                    player.play()
-                } else {
-                    player.currentTime = currentTime
-                    player.play()
-                    //print(currentTime)
-                }
-            } catch  {
-                print("Something went wrong")
-            }
-        }
+        print("test \(urlString)")
+ 
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = titleTemp
-        durationLabel.text = durationTemp
-        image.image = UIImage(named: imageTemp)
-        
+     
+       titleLabel.text = titleTemp
+                   durationLabel.text = durationTemp
+ 
+           setMusic()
+    }
+    override func willMove(toParent parent: UIViewController?) {
+        super.willMove(toParent: parent)
+
+        if parent == nil {
+            // The view is being removed from the stack, so call your function here
+            audioPlayer.stop()  
+        }
     }
     
 }
