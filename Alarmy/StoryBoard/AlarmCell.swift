@@ -31,8 +31,8 @@ class AlarmCell: UITableViewCell {
     }
     
     @IBAction func alarmSwitched(_ sender: UISwitch) {
-        
-        print("Alarm is Switched")
+        self.alarmData?.isOn = !self.alarmData!.isOn
+        print("Alarm is \(self.alarmData!.hour):\(self.alarmData!.minute) is \(self.alarmData!.isOn ? "On" : "Off")")
     }
     
     

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Foundation
 class ThirdAlarmVC: UIViewController {
     
     var delegate : AlarmDelegate?
@@ -16,9 +16,10 @@ class ThirdAlarmVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         datePicker.datePickerMode = .time
-        newAlarm.hour = 19
-        newAlarm.minute = 22
-        newAlarm.isOn = true
+        datePicker.locale = Locale(identifier: "en_US")
+        //newAlarm.hour = 19
+        //newAlarm.minute = 22
+        //newAlarm.isOn = true
         // Do any additional setup after loading the view.
     }
     
@@ -33,6 +34,14 @@ class ThirdAlarmVC: UIViewController {
     }
     */
     @IBAction func doneTapped(_ sender: UIBarButtonItem) {
+        let df = DateFormatter()
+        df.dateFormat = "HH:mm"
+        let strDate = df.string(from: datePicker.date)
+        let arr = strDate.components(separatedBy: ":")
+        var newAlarm = Alarm()
+        newAlarm.hour = Int(arr[0])!
+        newAlarm.minute = Int(arr[1])!
+        newAlarm.isOn = true
         delegate?.newAlarm(e: newAlarm)
         print("Sending Alarm")
         performSegue(withIdentifier: "ThirdToSecondAlarmUnwind", sender: nil)
@@ -41,8 +50,10 @@ class ThirdAlarmVC: UIViewController {
     
     
     @IBAction func datePickerScrolled(_ sender: UIDatePicker) {
-        
-        print("Picker: \(datePicker.date)")
+        let df = DateFormatter()
+        df.dateFormat = "HH:mm"
+        let strDate =  df.string(from: datePicker.date)
+        print("Picker: \(strDate))")
     }
     
 }
