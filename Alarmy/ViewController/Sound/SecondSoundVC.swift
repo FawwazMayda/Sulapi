@@ -35,7 +35,7 @@ class SecondSoundVC: UIViewController {
     var player: AVAudioPlayer?
     var currentTime: TimeInterval = 0
     var audioPlayer = AVAudioPlayer()
-    var musicPath = Bundle.main.bundleURL.appendingPathComponent("music1.mp3")
+    var musicPath = Bundle.main.bundleURL.appendingPathComponent("Always.mp3")
     var playingNumber = 0
     var playStatus: Bool = true
     var playTime = 0.0
