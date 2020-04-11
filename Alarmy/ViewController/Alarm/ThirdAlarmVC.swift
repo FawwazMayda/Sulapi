@@ -15,7 +15,7 @@ class ThirdAlarmVC: UIViewController {
     var index : Int?
     var chosenWeekday : String = ""
     //var newAlarm : Alarm = Alarm()
-    var dayList = ["Everyday","Every Monday","Every Tuesday","Every Wednesday","Every Thursday","Every Friday","Every Saturday","Every Sunday"]
+    var dayList = ["Everyday","Monday","Tuesday","Wednesday","hursday","Friday","Saturday","Sunday"]
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var dayTable: UITableView!
@@ -93,7 +93,7 @@ extension ThirdAlarmVC: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = dayTable.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath)
-        cell.textLabel?.text = dayList[indexPath.row]
+        cell.textLabel?.text = (dayList[indexPath.row]=="Everyday") ? dayList[indexPath.row] : "Every \(dayList[indexPath.row])"
         return cell
     }
     

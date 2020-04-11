@@ -12,6 +12,7 @@ class AlarmCell: UITableViewCell {
 
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var switchAlarm: UISwitch!
+    var delegate : AlarmDelegate?
     
     var alarmData : Alarm? {
         didSet {
@@ -37,6 +38,17 @@ class AlarmCell: UITableViewCell {
     @IBAction func alarmSwitched(_ sender: UISwitch) {
         self.alarmData?.isOn = !self.alarmData!.isOn
         print("Alarm is \(self.alarmData!.hour):\(self.alarmData!.minute) is \(self.alarmData!.isOn ? "On" : "Off")")
+        
+        if self.alarmData!.isOn {
+            if let realAlarm = alarmData {
+                delegate?.setAlarm(e: realAlarm)
+            }
+        } else {
+            if let realAlarm = alarmData {
+                delegate?.unSetAlarm(e: realAlarm)
+            }
+        }
+        
     }
     
     

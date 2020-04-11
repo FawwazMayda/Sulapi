@@ -10,6 +10,7 @@ import UIKit
 import UserNotifications
 
 class SecondAlarmVC: UIViewController, AlarmDelegate {
+    var alarmType : String = ""
     let userNotif = UNUserNotificationCenter.current()
     var dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Alarm.plist")
     
@@ -46,7 +47,7 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
     
     override func viewDidDisappear(_ animated: Bool) {
         saveData()
-        setAlarm()
+        //setAlarm()
     }
     
     
@@ -84,6 +85,7 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
     func newAlarm(e: Alarm) {
         self.alarmies.append(e)
         print("Get new alarm")
+        setAlarm(e: e)
         self.tableview.reloadData()
         saveData()
     }
@@ -94,6 +96,7 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
         self.editAlarm = nil
         self.editAlarmIndex = nil
         self.saveData()
+        setAlarm(e: e)
         self.tableview.reloadData()
     }
 
@@ -144,6 +147,37 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
             }
         }
     }
+    func setAlarm(e : Alarm) {
+            let notificationContent = UNMutableNotificationContent()
+            notificationContent.title = "Its Notif"
+            notificationContent.body = "Time to \(alarmType)"
+            notificationContent.badge = NSNumber(value: 1)
+            notificationContent.sound = .default
+            //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 7, repeats: false)
+            var dateComponent = DateComponents()
+            dateComponent.calendar = Calendar.current
+            dateComponent.hour = e.hour
+            dateComponent.minute = e.minute
+            // 1 Sunday, 2 Monday and so on
+            let wd = e.dayToWeekday[e.onDay[0]]
+            dateComponent.weekday = wd!
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)
+            let req = UNNotificationRequest(identifier: e.strDate, content: notificationContent, trigger: trigger)
+            
+            self.userNotif.add(req) { (Error) in
+                if let e = Error {
+                    print(e)
+                } else {
+                    print("Alarm Setted at \(e.strDate) day:\(e.onDay[0])")
+                }
+            }
+        }
+    func unSetAlarm(e : Alarm) {
+        userNotif.removePendingNotificationRequests(withIdentifiers: [e.strDate])
+        print("Unset the alarm \(e.strDate)")
+    }
+
+    
     /*
     // MARK: - Navigation
 
@@ -164,6 +198,7 @@ extension SecondAlarmVC: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AlarmCell", for: indexPath) as! AlarmCell
         cell.alarmData = alarmies[indexPath.row]
+        cell.delegate = self
         return cell
     }
     
@@ -172,6 +207,7 @@ extension SecondAlarmVC: UITableViewDelegate,UITableViewDataSource {
             print("Bisa di edit")
             editAlarm = alarmies[indexPath.row]
             editAlarmIndex = indexPath.row
+            unSetAlarm(e: alarmies[indexPath.row])
             performSegue(withIdentifier: "SecondToThirdAlarm", sender: self)
         } else {
             print("Tidak bisa di edit")
@@ -180,6 +216,7 @@ extension SecondAlarmVC: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            unSetAlarm(e: alarmies[indexPath.row])
             alarmies.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
