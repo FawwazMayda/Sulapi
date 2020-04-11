@@ -27,6 +27,9 @@ class ThirdAlarmVC: UIViewController {
         dayTable.dataSource = self
         if let oldAlarm = editAlarm {
             timeLabel.text = "\(oldAlarm.hour):\(oldAlarm.minute)"
+        } else {
+            let (h,m) = self.parseAlarm(d: datePicker.date)
+            timeLabel.text = "\(h):\(m)"
         }
         //newAlarm.hour = 19
         //newAlarm.minute = 22
