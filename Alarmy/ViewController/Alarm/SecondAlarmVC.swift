@@ -163,7 +163,7 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
             // 1 Sunday, 2 Monday and so on
             let wd = e.dayToWeekday[e.onDay[0]]
             dateComponent.weekday = wd!
-            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: true)
             let req = UNNotificationRequest(identifier: e.strDate, content: notificationContent, trigger: trigger)
             
             self.userNotif.add(req) { (Error) in
@@ -176,7 +176,7 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
         }
     func unSetAlarm(e : Alarm) {
         userNotif.removePendingNotificationRequests(withIdentifiers: [e.strDate])
-        print("Unset the alarm \(e.strDate)")
+        print("Unset the alarm \(e.strDate) day:\(e.onDay[0])")
     }
 
     

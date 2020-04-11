@@ -52,6 +52,9 @@
                         <viewLayoutGuide key="safeArea" id="hDw-NM-gqj"/>
                     </view>
                     <navigationItem key="navigationItem" title="Alarm" id="em4-Sx-7Hw"/>
+                    <connections>
+                        <segue destination="K1D-Jv-9Ub" kind="show" identifier="FirstToSecondAlarm" id="ubU-Le-Ul5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9HM-Ef-Frj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,6 +96,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableview" destination="734-5e-Uk1" id="qli-dw-3Wr"/>
+                        <segue destination="LAK-fs-9Mf" kind="show" identifier="SecondToThirdAlarm" id="6So-Nf-FaX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HV0-0V-Nsf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

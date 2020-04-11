@@ -15,21 +15,33 @@ class ThirdAlarmVC: UIViewController {
     var index : Int?
     var chosenWeekday : String = ""
     //var newAlarm : Alarm = Alarm()
-    var dayList = ["Everyday","Monday","Tuesday","Wednesday","hursday","Friday","Saturday","Sunday"]
+    var dayList = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var dayTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Get the auto Weekday
+        let date = Date()
+        let calender = Calendar.current
+        let currentWeekday = calender.component(.weekday, from: date)
+        chosenWeekday = dayList[currentWeekday-1]
+        //Set a picker
         datePicker.datePickerMode = .time
         datePicker.locale = Locale(identifier: "en_US")
         dayTable.delegate = self
         dayTable.dataSource = self
+        //Set the label
         if let oldAlarm = editAlarm {
-            timeLabel.text = "\(oldAlarm.hour):\(oldAlarm.minute)"
+            let hourLabel = (oldAlarm.hour>=10) ? String(oldAlarm.hour) : "0\(oldAlarm.hour)"
+            let minuteLabel = (oldAlarm.minute>=10) ? String(oldAlarm.minute) : "0\(oldAlarm.minute)"
+            timeLabel.text = "\(hourLabel):\(minuteLabel)"
+            chosenWeekday = oldAlarm.onDay[0]
         } else {
             let (h,m) = self.parseAlarm(d: datePicker.date)
-            timeLabel.text = "\(h):\(m)"
+            let hourLabel = (h>=10) ? String(h) : "0\(h)"
+            let minuteLabel = (m>=10) ? String(m) : "0\(m)"
+            timeLabel.text = "\(hourLabel):\(minuteLabel)"
         }
         //newAlarm.hour = 19
         //newAlarm.minute = 22
@@ -93,7 +105,8 @@ extension ThirdAlarmVC: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = dayTable.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath)
-        cell.textLabel?.text = (dayList[indexPath.row]=="Everyday") ? dayList[indexPath.row] : "Every \(dayList[indexPath.row])"
+        cell.textLabel?.text = "Every \(dayList[indexPath.row])"
+        cell.accessoryType = (dayList[indexPath.row]==chosenWeekday) ? .checkmark : .none
         return cell
     }
     
