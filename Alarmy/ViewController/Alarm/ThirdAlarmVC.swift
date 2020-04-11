@@ -115,7 +115,6 @@ extension ThirdAlarmVC: UITableViewDelegate,UITableViewDataSource {
         if selectedCell?.accessoryType==UITableViewCell.AccessoryType.none {
             selectedCell?.accessoryType = .checkmark
             chosenWeekday = dayList[indexPath.row]
-            
         } else {
             chosenWeekday = ""
             selectedCell?.accessoryType = .none

@@ -128,8 +128,9 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
             let notificationContent = UNMutableNotificationContent()
             notificationContent.title = "Its Notif"
             notificationContent.body = "Time to Wake or to Bed"
-            notificationContent.badge = NSNumber(value: 1)
-            notificationContent.sound = .default
+            //notificationContent.badge = NSNumber(value: 1)
+            //notificationContent.sound = .default
+            notificationContent.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "Bell.wav"))
             //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 7, repeats: false)
             var dateComponent = DateComponents()
             dateComponent.calendar = Calendar.current
