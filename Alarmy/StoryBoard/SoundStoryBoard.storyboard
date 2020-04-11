@@ -136,8 +136,10 @@
                     <connections>
                         <outlet property="button" destination="jUw-Fo-Khe" id="7hC-6b-tPS"/>
                         <outlet property="durationLabel" destination="cp1-IM-1ih" id="Hzk-uO-CLZ"/>
+                        <outlet property="endtimerprogress" destination="8Lf-w8-q8d" id="Qn5-Ri-yy5"/>
                         <outlet property="image" destination="PMV-Eq-gLQ" id="gQB-Wo-ZDu"/>
                         <outlet property="musicPlayerSlider" destination="8FQ-53-1la" id="gb8-lh-Un7"/>
+                        <outlet property="starttimerprogress" destination="Wic-5Y-hPY" id="Yx7-h3-iTb"/>
                         <outlet property="titleLabel" destination="vjq-r4-tDK" id="Tqq-DH-r6A"/>
                     </connections>
                 </viewController>
