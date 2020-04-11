@@ -12,7 +12,8 @@ import UserNotifications
 class SecondAlarmVC: UIViewController, AlarmDelegate {
     var alarmType : String = ""
     let userNotif = UNUserNotificationCenter.current()
-    var dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Alarm.plist")
+    var dataFilePath : URL?
+    //var dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Alarm.plist")
     
     var alarmies = [Alarm]()
     var editAlarm : Alarm?
@@ -21,9 +22,10 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
     @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = alarmType=="Bedtime.plist" ? "Bedtime" : "Waketime"
         self.requestNotificationAuthorization()
         
-
+        dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent(alarmType)
         // Do any additional setup after loading the view.
         tableview.register(UINib(nibName: "AlarmCell", bundle: nil), forCellReuseIdentifier: "AlarmCell")
         tableview.delegate = self
