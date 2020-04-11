@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import UserNotifications
 
 class SecondAlarmVC: UIViewController, AlarmDelegate {
-    
+    let userNotif = UNUserNotificationCenter.current()
     var dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Alarm.plist")
     
     var alarmies = [Alarm]()
@@ -19,6 +20,8 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
     @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.requestNotificationAuthorization()
+        
 
         // Do any additional setup after loading the view.
         tableview.register(UINib(nibName: "AlarmCell", bundle: nil), forCellReuseIdentifier: "AlarmCell")
@@ -43,8 +46,19 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
     
     override func viewDidDisappear(_ animated: Bool) {
         saveData()
+        setAlarm()
     }
     
+    
+    func requestNotificationAuthorization() {
+        // Code here
+        let authOptions = UNAuthorizationOptions.init(arrayLiteral: .alert, .badge, .sound)
+        self.userNotif.requestAuthorization(options: authOptions) { (Bool, Error) in
+            if let error = Error {
+                print("Error: ",error)
+            }
+        }
+    }
     @IBAction func addTapped(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "SecondToThirdAlarm", sender: self)
     }
@@ -101,6 +115,33 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
             }
         } catch {
             print("Error Decoding data")
+        }
+    }
+    
+    func setAlarm() {
+        for alarm in alarmies {
+            let notificationContent = UNMutableNotificationContent()
+            notificationContent.title = "Its Notif"
+            notificationContent.body = "Time to Wake or to Bed"
+            notificationContent.badge = NSNumber(value: 1)
+            notificationContent.sound = .default
+            //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 7, repeats: false)
+            var dateComponent = DateComponents()
+            dateComponent.calendar = Calendar.current
+            dateComponent.hour = alarm.hour
+            dateComponent.minute = alarm.minute
+            // 1 Sunday 2 Monday and so on
+            dateComponent.weekday = 7
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)
+            let req = UNNotificationRequest(identifier: alarm.strDate, content: notificationContent, trigger: trigger)
+            
+            self.userNotif.add(req) { (Error) in
+                if let e = Error {
+                    print(e)
+                } else {
+                    print("Alarm Setted at \(alarm.strDate)")
+                }
+            }
         }
     }
     /*
