@@ -52,7 +52,7 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
         //setAlarm()
     }
     
-    
+    //MARK: - Miscellaneous
     func requestNotificationAuthorization() {
         // Code here
         let authOptions = UNAuthorizationOptions.init(arrayLiteral: .alert, .badge, .sound)
@@ -123,36 +123,20 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
         }
     }
     
-    func setAlarm() {
-        for alarm in alarmies {
-            let notificationContent = UNMutableNotificationContent()
-            notificationContent.title = "Its Notif"
-            notificationContent.body = "Time to Wake or to Bed"
-            //notificationContent.badge = NSNumber(value: 1)
-            notificationContent.sound = .default
-            //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 7, repeats: false)
-            var dateComponent = DateComponents()
-            dateComponent.calendar = Calendar.current
-            dateComponent.hour = alarm.hour
-            dateComponent.minute = alarm.minute
-            // 1 Sunday 2 Monday and so on
-            dateComponent.weekday = 7
-            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)
-            let req = UNNotificationRequest(identifier: alarm.strDate, content: notificationContent, trigger: trigger)
-            
-            self.userNotif.add(req) { (Error) in
-                if let e = Error {
-                    print(e)
-                } else {
-                    print("Alarm Setted at \(alarm.strDate)")
-                }
-            }
+    //MARK: - Alarm Delegate
+    func setAlarm(e : Alarm) {
+    
+      //Set the alarm
+        for day in e.onDay {
+            e.onDayUUID.append(UUID().uuidString)
+            setAlarm(e: e,weekday: day)
         }
     }
-    func setAlarm(e : Alarm) {
+    func setAlarm(e : Alarm, weekday : Int) {
+        // set the alarm on specific weekday
             let notificationContent = UNMutableNotificationContent()
             notificationContent.title = "Its Notif"
-            notificationContent.body = "Time to \(alarmType)"
+            notificationContent.body = "Time to \(title!)"
             notificationContent.badge = NSNumber(value: 1)
             notificationContent.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "Bell.wav"))
             //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 7, repeats: false)
@@ -161,22 +145,23 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
             dateComponent.hour = e.hour
             dateComponent.minute = e.minute
             // 1 Sunday, 2 Monday and so on
-            let wd = e.dayToWeekday[e.onDay[0]]
-            dateComponent.weekday = wd!
+            //let wd = e.dayToWeekday[e.onDay[0]]
+            dateComponent.weekday = weekday
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: true)
-            let req = UNNotificationRequest(identifier: e.strDate, content: notificationContent, trigger: trigger)
+        let req = UNNotificationRequest(identifier: e.onDayUUID.last!, content: notificationContent, trigger: trigger)
             
             self.userNotif.add(req) { (Error) in
                 if let e = Error {
                     print(e)
                 } else {
-                    print("Alarm Setted at \(e.strDate) day:\(e.onDay[0])")
+                    print("Alarm Setted at \(e.strDate)")
                 }
             }
         }
     func unSetAlarm(e : Alarm) {
-        userNotif.removePendingNotificationRequests(withIdentifiers: [e.strDate])
-        print("Unset the alarm \(e.strDate) day:\(e.onDay[0])")
+        userNotif.removePendingNotificationRequests(withIdentifiers: e.onDayUUID)
+        e.onDayUUID = [String]()
+        print("Unset the alarm \(e.strDate)")
     }
 
     
@@ -189,9 +174,11 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    
 
 }
 
+//MARK: - UIRelated
 extension SecondAlarmVC: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return alarmies.count

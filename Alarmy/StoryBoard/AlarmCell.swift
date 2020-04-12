@@ -11,6 +11,7 @@ import UIKit
 class AlarmCell: UITableViewCell {
 
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var repeatLabel: UILabel!
     @IBOutlet weak var switchAlarm: UISwitch!
     var delegate : AlarmDelegate?
     
@@ -21,6 +22,11 @@ class AlarmCell: UITableViewCell {
                 let minuteLabel = alarm.minute>=10 ? String(alarm.minute) : "0\(alarm.minute)"
                 timeLabel.text = "\(hourLabel):\(minuteLabel)"
                 switchAlarm.isOn = self.alarmData?.isOn ?? false
+                var repeatl = ""
+                for d in alarm.onDay {
+                    repeatl += "\(Helper.dayToWeekdaInt(d)) "
+                }
+                repeatLabel.text = repeatl
             }
         }
     }

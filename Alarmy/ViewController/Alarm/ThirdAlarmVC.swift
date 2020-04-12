@@ -13,9 +13,11 @@ class ThirdAlarmVC: UIViewController {
     var delegate : AlarmDelegate?
     var editAlarm : Alarm?
     var index : Int?
-    var chosenWeekday : String = ""
+    //1 - 7
+    var chosenWeekday = [Int]()
     //var newAlarm : Alarm = Alarm()
-    var dayList = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+    var dayList = [1,2,3,4,5,6,7]
+    var currentWeekday = 0
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var dayTable: UITableView!
@@ -24,8 +26,8 @@ class ThirdAlarmVC: UIViewController {
         //Get the auto Weekday
         let date = Date()
         let calender = Calendar.current
-        let currentWeekday = calender.component(.weekday, from: date)
-        chosenWeekday = dayList[currentWeekday-1]
+        currentWeekday = calender.component(.weekday, from: date)
+        chosenWeekday.append(currentWeekday)
         //Set a picker
         datePicker.datePickerMode = .time
         datePicker.locale = Locale(identifier: "en_US")
@@ -36,7 +38,7 @@ class ThirdAlarmVC: UIViewController {
             let hourLabel = (oldAlarm.hour>=10) ? String(oldAlarm.hour) : "0\(oldAlarm.hour)"
             let minuteLabel = (oldAlarm.minute>=10) ? String(oldAlarm.minute) : "0\(oldAlarm.minute)"
             timeLabel.text = "\(hourLabel):\(minuteLabel)"
-            chosenWeekday = oldAlarm.onDay[0]
+            chosenWeekday = oldAlarm.onDay
         } else {
             let (h,m) = self.parseAlarm(d: datePicker.date)
             let hourLabel = (h>=10) ? String(h) : "0\(h)"
@@ -59,6 +61,7 @@ class ThirdAlarmVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    //MARK: - Sending Alarm
     @IBAction func doneTapped(_ sender: UIBarButtonItem) {
         
         if let anAlarm = editAlarm,let id = index {
@@ -66,7 +69,8 @@ class ThirdAlarmVC: UIViewController {
             let (hour,minute) = parseAlarm(d: datePicker.date)
             anAlarm.hour = hour
             anAlarm.minute = minute
-            anAlarm.onDay.append(chosenWeekday)
+            chosenWeekday.sort()
+            anAlarm.onDay = chosenWeekday
             delegate?.editAlarm(index: id, e: anAlarm)
         } else {
             let (hour,minute) = parseAlarm(d: datePicker.date)
@@ -74,7 +78,8 @@ class ThirdAlarmVC: UIViewController {
             newAlarm.hour = hour
             newAlarm.minute = minute
             newAlarm.isOn = true
-            newAlarm.onDay.append(chosenWeekday)
+            chosenWeekday.sort()
+            newAlarm.onDay = chosenWeekday
             delegate?.newAlarm(e: newAlarm)
         }
         print("Sending Alarm")
@@ -82,10 +87,12 @@ class ThirdAlarmVC: UIViewController {
         
     }
     
-    
+    //MARK: - UIRelated
     @IBAction func datePickerScrolled(_ sender: UIDatePicker) {
         let (hour,min) = parseAlarm(d: datePicker.date)
-        timeLabel.text = "\(hour):\(min)"
+        let hourLabel = (hour>=10) ? String(hour) : "0\(hour)"
+        let minuteLabel = (min>=10) ? String(min) : "0\(min)"
+        timeLabel.text = "\(hourLabel):\(minuteLabel)"
     }
     
     func parseAlarm(d : Date)-> (Int,Int) {
@@ -105,8 +112,9 @@ extension ThirdAlarmVC: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = dayTable.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath)
-        cell.textLabel?.text = "Every \(dayList[indexPath.row])"
-        cell.accessoryType = (dayList[indexPath.row]==chosenWeekday) ? .checkmark : .none
+   
+        cell.textLabel?.text = "Every \(Helper.dayToWeekdaInt(dayList[indexPath.row]))"
+        cell.accessoryType = (chosenWeekday.firstIndex(of: dayList[indexPath.row])==nil) ? .none : .checkmark
         return cell
     }
     
@@ -114,9 +122,11 @@ extension ThirdAlarmVC: UITableViewDelegate,UITableViewDataSource {
         let selectedCell = dayTable.cellForRow(at: indexPath)
         if selectedCell?.accessoryType==UITableViewCell.AccessoryType.none {
             selectedCell?.accessoryType = .checkmark
-            chosenWeekday = dayList[indexPath.row]
+            chosenWeekday.append(indexPath.row+1)
+            print("Repeat at \(Helper.dayToWeekdaInt(indexPath.row+1))")
         } else {
-            chosenWeekday = ""
+            chosenWeekday = chosenWeekday.filter {$0 != (indexPath.row+1)}
+            print("Not Repeat at \(Helper.dayToWeekdaInt(indexPath.row+1))")
             selectedCell?.accessoryType = .none
         }
     }
