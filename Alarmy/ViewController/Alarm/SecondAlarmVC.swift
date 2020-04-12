@@ -24,7 +24,7 @@ class SecondAlarmVC: UIViewController, AlarmDelegate {
         super.viewDidLoad()
         title = alarmType=="Bedtime.plist" ? "Bedtime" : "Waketime"
         self.requestNotificationAuthorization()
-        
+        userNotif.delegate = self
         dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent(alarmType)
         // Do any additional setup after loading the view.
         tableview.register(UINib(nibName: "AlarmCell", bundle: nil), forCellReuseIdentifier: "AlarmCell")
@@ -211,4 +211,14 @@ extension SecondAlarmVC: UITableViewDelegate,UITableViewDataSource {
         }
     }
     
+}
+
+extension SecondAlarmVC: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .badge, .sound])
+    }
 }
