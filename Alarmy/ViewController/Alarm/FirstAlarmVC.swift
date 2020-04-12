@@ -9,11 +9,30 @@
 import UIKit
 
 class FirstAlarmVC: UIViewController {
+    
+    var chosenAlarmType = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func bedTimeTapped(_ sender: UIButton) {
+        chosenAlarmType = "Bedtime.plist"
+        performSegue(withIdentifier: "FirstToSecondAlarm", sender: self)
+    }
+    
+    @IBAction func wakeTimeTapped(_ sender: Any) {
+        chosenAlarmType = "Waketime.plist"
+        performSegue(withIdentifier: "FirstToSecondAlarm", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "FirstToSecondAlarm" {
+            let vc = segue.destination as! SecondAlarmVC
+            vc.alarmType = chosenAlarmType
+        }
     }
     
 
