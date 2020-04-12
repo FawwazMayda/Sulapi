@@ -158,7 +158,7 @@ class SecondSoundVC: UIViewController {
         titleLabel.text = titleTemp
         durationLabel.text = durationTemp
         starttimerprogress.text = "00:00"
-        image.layer.cornerRadius = 8.0
+        image.layer.cornerRadius = 12.0
         image.clipsToBounds = true
         image.image = UIImage(named: imageTemp)
         setMusic()
