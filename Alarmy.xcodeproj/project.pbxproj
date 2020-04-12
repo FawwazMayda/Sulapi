@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F312231243F5FCE0071BAF4 /* ThirdOnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F312230243F5FCE0071BAF4 /* ThirdOnBoarding.swift */; };
+		3F312233243F5FDD0071BAF4 /* FourthOnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F312232243F5FDD0071BAF4 /* FourthOnBoarding.swift */; };
+		3F312235243F60040071BAF4 /* PageViewOnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F312234243F60040071BAF4 /* PageViewOnBoarding.swift */; };
+		3F312237243F616D0071BAF4 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F312236243F616D0071BAF4 /* OnBoarding.storyboard */; };
 		4D45E423243C754400637259 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45E422243C754400637259 /* AppDelegate.swift */; };
 		4D45E425243C754400637259 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45E424243C754400637259 /* SceneDelegate.swift */; };
-		4D45E427243C754400637259 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45E426243C754400637259 /* FirstViewController.swift */; };
-		4D45E429243C754400637259 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45E428243C754400637259 /* SecondViewController.swift */; };
+		4D45E427243C754400637259 /* FirstOnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45E426243C754400637259 /* FirstOnBoarding.swift */; };
+		4D45E429243C754400637259 /* SecondOnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45E428243C754400637259 /* SecondOnBoarding.swift */; };
 		4D45E42C243C754400637259 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D45E42A243C754400637259 /* Main.storyboard */; };
 		4D45E42E243C754500637259 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D45E42D243C754500637259 /* Assets.xcassets */; };
 		4D45E431243C754500637259 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D45E42F243C754500637259 /* LaunchScreen.storyboard */; };
@@ -31,11 +35,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F312230243F5FCE0071BAF4 /* ThirdOnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdOnBoarding.swift; sourceTree = "<group>"; };
+		3F312232243F5FDD0071BAF4 /* FourthOnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthOnBoarding.swift; sourceTree = "<group>"; };
+		3F312234243F60040071BAF4 /* PageViewOnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewOnBoarding.swift; sourceTree = "<group>"; };
+		3F312236243F616D0071BAF4 /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 		4D45E41F243C754400637259 /* Alarmy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alarmy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D45E422243C754400637259 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D45E424243C754400637259 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4D45E426243C754400637259 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		4D45E428243C754400637259 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		4D45E426243C754400637259 /* FirstOnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnBoarding.swift; sourceTree = "<group>"; };
+		4D45E428243C754400637259 /* SecondOnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnBoarding.swift; sourceTree = "<group>"; };
 		4D45E42B243C754400637259 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D45E42D243C754500637259 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D45E430243C754500637259 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,6 +75,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F312238243F62BE0071BAF4 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				4D45E426243C754400637259 /* FirstOnBoarding.swift */,
+				4D45E428243C754400637259 /* SecondOnBoarding.swift */,
+				3F312230243F5FCE0071BAF4 /* ThirdOnBoarding.swift */,
+				3F312232243F5FDD0071BAF4 /* FourthOnBoarding.swift */,
+				3F312234243F60040071BAF4 /* PageViewOnBoarding.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
 		4D45E416243C754400637259 = {
 			isa = PBXGroup;
 			children = (
@@ -90,8 +110,6 @@
 				4D45E440243C7BD100637259 /* ViewController */,
 				4D45E439243C756000637259 /* StoryBoard */,
 				4D45E424243C754400637259 /* SceneDelegate.swift */,
-				4D45E426243C754400637259 /* FirstViewController.swift */,
-				4D45E428243C754400637259 /* SecondViewController.swift */,
 				4D45E42D243C754500637259 /* Assets.xcassets */,
 				4D45E42F243C754500637259 /* LaunchScreen.storyboard */,
 				4D45E432243C754500637259 /* Info.plist */,
@@ -108,6 +126,7 @@
 				4D45E43E243C7A6600637259 /* AlarmStoryBoard.storyboard */,
 				4DDCE25C243E13E20021097B /* AlarmCell.swift */,
 				4DDCE25D243E13E20021097B /* AlarmCell.xib */,
+				3F312236243F616D0071BAF4 /* OnBoarding.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -115,9 +134,10 @@
 		4D45E440243C7BD100637259 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				4D45E451243C7D4E00637259 /* Alarm */,
-				4D45E450243C7D4200637259 /* Meditation */,
+				3F312238243F62BE0071BAF4 /* OnBoarding */,
 				4D45E44F243C7D3A00637259 /* Sound */,
+				4D45E450243C7D4200637259 /* Meditation */,
+				4D45E451243C7D4E00637259 /* Alarm */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -215,6 +235,7 @@
 				4D45E43D243C79D200637259 /* MeditationStoryBoard.storyboard in Resources */,
 				4DCFE49A24421E19005299B5 /* Bell.wav in Resources */,
 				4D45E42C243C754400637259 /* Main.storyboard in Resources */,
+				3F312237243F616D0071BAF4 /* OnBoarding.storyboard in Resources */,
 				4D45E43B243C782300637259 /* SoundStoryBoard.storyboard in Resources */,
 				4DDCE25F243E13E20021097B /* AlarmCell.xib in Resources */,
 				4D45E43F243C7A6600637259 /* AlarmStoryBoard.storyboard in Resources */,
@@ -228,17 +249,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D45E429243C754400637259 /* SecondViewController.swift in Sources */,
+				4D45E429243C754400637259 /* SecondOnBoarding.swift in Sources */,
+				3F312233243F5FDD0071BAF4 /* FourthOnBoarding.swift in Sources */,
 				4D45E442243C7CCF00637259 /* FirstSoundVC.swift in Sources */,
-				4D45E427243C754400637259 /* FirstViewController.swift in Sources */,
+				4D45E427243C754400637259 /* FirstOnBoarding.swift in Sources */,
 				4D45E446243C7CFD00637259 /* FirstMeditationVC.swift in Sources */,
 				4D45E44C243C7D2900637259 /* SecondAlarmVC.swift in Sources */,
+				3F312235243F60040071BAF4 /* PageViewOnBoarding.swift in Sources */,
 				4D45E423243C754400637259 /* AppDelegate.swift in Sources */,
 				4DDCE261243E16040021097B /* Model.swift in Sources */,
 				4D45E444243C7CE600637259 /* SecondSoundVC.swift in Sources */,
 				4D45E44E243C7D3500637259 /* ThirdAlarmVC.swift in Sources */,
 				4D45E448243C7D1100637259 /* SecondMeditationVC.swift in Sources */,
 				4D45E425243C754400637259 /* SceneDelegate.swift in Sources */,
+				3F312231243F5FCE0071BAF4 /* ThirdOnBoarding.swift in Sources */,
 				4D45E44A243C7D1D00637259 /* FirstAlarmVC.swift in Sources */,
 				4DDCE25E243E13E20021097B /* AlarmCell.swift in Sources */,
 			);
