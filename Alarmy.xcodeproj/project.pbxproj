@@ -24,6 +24,28 @@
 		4D45E44A243C7D1D00637259 /* FirstAlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45E449243C7D1D00637259 /* FirstAlarmVC.swift */; };
 		4D45E44C243C7D2900637259 /* SecondAlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45E44B243C7D2900637259 /* SecondAlarmVC.swift */; };
 		4D45E44E243C7D3500637259 /* ThirdAlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45E44D243C7D3500637259 /* ThirdAlarmVC.swift */; };
+		7FE1D6BE2442FEA40089D4FA /* Tropical Forest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1D6A82442FEA30089D4FA /* Tropical Forest.mp3 */; };
+		7FE1D6BF2442FEA40089D4FA /* Delta Waves.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1D6A92442FEA30089D4FA /* Delta Waves.mp3 */; };
+		7FE1D6C02442FEA40089D4FA /* Enjoy Light.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1D6AA2442FEA30089D4FA /* Enjoy Light.mp3 */; };
+		7FE1D6C12442FEA40089D4FA /* Bird Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1D6AB2442FEA30089D4FA /* Bird Sound.mp3 */; };
+		7FE1D6C22442FEA40089D4FA /* Early Morning.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1D6AC2442FEA30089D4FA /* Early Morning.mp3 */; };
+		7FE1D6C32442FEA40089D4FA /* Camfire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1D6AD2442FEA30089D4FA /* Camfire.mp3 */; };
+		7FE1D6C42442FEA40089D4FA /* Magic Elf.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1D6AE2442FEA30089D4FA /* Magic Elf.mp3 */; };
+		7FE1D6C52442FEA40089D4FA /* River Flows.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1D6AF2442FEA30089D4FA /* River Flows.mp3 */; };
+		7FE1D6C62442FEA40089D4FA /* Waterfall.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1D6B02442FEA30089D4FA /* Waterfall.mp3 */; };
+		7FE1D6C72442FEA40089D4FA /* Heavy Thunder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1D6B12442FEA30089D4FA /* Heavy Thunder.mp3 */; };
+		7FE1D6C82442FEA40089D4FA /* Missing You.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1D6B22442FEA30089D4FA /* Missing You.mp3 */; };
+		7FE1D6C92442FEA40089D4FA /* Sleep Tight.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1D6B32442FEA30089D4FA /* Sleep Tight.mp3 */; };
+		7FE1D6CA2442FEA40089D4FA /* Happy Time.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1D6B42442FEA30089D4FA /* Happy Time.mp3 */; };
+		7FE1D6CB2442FEA40089D4FA /* Rainfall.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1D6B52442FEA30089D4FA /* Rainfall.mp3 */; };
+		7FE1D6CC2442FEA40089D4FA /* Peaceful Night.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1D6B62442FEA30089D4FA /* Peaceful Night.mp3 */; };
+		7FE1D6CD2442FEA40089D4FA /* Bright Future.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1D6B72442FEA30089D4FA /* Bright Future.mp3 */; };
+		7FE1D6CE2442FEA40089D4FA /* Always.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1D6B82442FEA40089D4FA /* Always.mp3 */; };
+		7FE1D6CF2442FEA40089D4FA /* Bedtime Lullaby.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1D6B92442FEA40089D4FA /* Bedtime Lullaby.mp3 */; };
+		7FE1D6D02442FEA40089D4FA /* Lovely Journey.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1D6BA2442FEA40089D4FA /* Lovely Journey.mp3 */; };
+		7FE1D6D12442FEA40089D4FA /* Ocean Waves.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1D6BB2442FEA40089D4FA /* Ocean Waves.mp3 */; };
+		7FE1D6D22442FEA40089D4FA /* Sunny Day.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1D6BC2442FEA40089D4FA /* Sunny Day.mp3 */; };
+		7FE1D6D32442FEA40089D4FA /* Flowing Water.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7FE1D6BD2442FEA40089D4FA /* Flowing Water.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +68,28 @@
 		4D45E449243C7D1D00637259 /* FirstAlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAlarmVC.swift; sourceTree = "<group>"; };
 		4D45E44B243C7D2900637259 /* SecondAlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondAlarmVC.swift; sourceTree = "<group>"; };
 		4D45E44D243C7D3500637259 /* ThirdAlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdAlarmVC.swift; sourceTree = "<group>"; };
+		7FE1D6A82442FEA30089D4FA /* Tropical Forest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Tropical Forest.mp3"; path = "Songs/Tropical Forest.mp3"; sourceTree = "<group>"; };
+		7FE1D6A92442FEA30089D4FA /* Delta Waves.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Delta Waves.mp3"; path = "Songs/Delta Waves.mp3"; sourceTree = "<group>"; };
+		7FE1D6AA2442FEA30089D4FA /* Enjoy Light.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Enjoy Light.mp3"; path = "Songs/Enjoy Light.mp3"; sourceTree = "<group>"; };
+		7FE1D6AB2442FEA30089D4FA /* Bird Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Bird Sound.mp3"; path = "Songs/Bird Sound.mp3"; sourceTree = "<group>"; };
+		7FE1D6AC2442FEA30089D4FA /* Early Morning.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Early Morning.mp3"; path = "Songs/Early Morning.mp3"; sourceTree = "<group>"; };
+		7FE1D6AD2442FEA30089D4FA /* Camfire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Camfire.mp3; path = Songs/Camfire.mp3; sourceTree = "<group>"; };
+		7FE1D6AE2442FEA30089D4FA /* Magic Elf.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Magic Elf.mp3"; path = "Songs/Magic Elf.mp3"; sourceTree = "<group>"; };
+		7FE1D6AF2442FEA30089D4FA /* River Flows.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "River Flows.mp3"; path = "Songs/River Flows.mp3"; sourceTree = "<group>"; };
+		7FE1D6B02442FEA30089D4FA /* Waterfall.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Waterfall.mp3; path = Songs/Waterfall.mp3; sourceTree = "<group>"; };
+		7FE1D6B12442FEA30089D4FA /* Heavy Thunder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Heavy Thunder.mp3"; path = "Songs/Heavy Thunder.mp3"; sourceTree = "<group>"; };
+		7FE1D6B22442FEA30089D4FA /* Missing You.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Missing You.mp3"; path = "Songs/Missing You.mp3"; sourceTree = "<group>"; };
+		7FE1D6B32442FEA30089D4FA /* Sleep Tight.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Sleep Tight.mp3"; path = "Songs/Sleep Tight.mp3"; sourceTree = "<group>"; };
+		7FE1D6B42442FEA30089D4FA /* Happy Time.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Happy Time.mp3"; path = "Songs/Happy Time.mp3"; sourceTree = "<group>"; };
+		7FE1D6B52442FEA30089D4FA /* Rainfall.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Rainfall.mp3; path = Songs/Rainfall.mp3; sourceTree = "<group>"; };
+		7FE1D6B62442FEA30089D4FA /* Peaceful Night.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Peaceful Night.mp3"; path = "Songs/Peaceful Night.mp3"; sourceTree = "<group>"; };
+		7FE1D6B72442FEA30089D4FA /* Bright Future.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Bright Future.mp3"; path = "Songs/Bright Future.mp3"; sourceTree = "<group>"; };
+		7FE1D6B82442FEA40089D4FA /* Always.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Always.mp3; path = Songs/Always.mp3; sourceTree = "<group>"; };
+		7FE1D6B92442FEA40089D4FA /* Bedtime Lullaby.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Bedtime Lullaby.mp3"; path = "Songs/Bedtime Lullaby.mp3"; sourceTree = "<group>"; };
+		7FE1D6BA2442FEA40089D4FA /* Lovely Journey.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Lovely Journey.mp3"; path = "Songs/Lovely Journey.mp3"; sourceTree = "<group>"; };
+		7FE1D6BB2442FEA40089D4FA /* Ocean Waves.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Ocean Waves.mp3"; path = "Songs/Ocean Waves.mp3"; sourceTree = "<group>"; };
+		7FE1D6BC2442FEA40089D4FA /* Sunny Day.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Sunny Day.mp3"; path = "Songs/Sunny Day.mp3"; sourceTree = "<group>"; };
+		7FE1D6BD2442FEA40089D4FA /* Flowing Water.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Flowing Water.mp3"; path = "Songs/Flowing Water.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +159,7 @@
 		4D45E44F243C7D3A00637259 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				7F29378E243FF06500A873A1 /* Songs */,
 				4D45E441243C7CCF00637259 /* FirstSoundVC.swift */,
 				4D45E443243C7CE600637259 /* SecondSoundVC.swift */,
 			);
@@ -138,6 +183,35 @@
 				4D45E44D243C7D3500637259 /* ThirdAlarmVC.swift */,
 			);
 			path = Alarm;
+			sourceTree = "<group>";
+		};
+		7F29378E243FF06500A873A1 /* Songs */ = {
+			isa = PBXGroup;
+			children = (
+				7FE1D6B82442FEA40089D4FA /* Always.mp3 */,
+				7FE1D6B92442FEA40089D4FA /* Bedtime Lullaby.mp3 */,
+				7FE1D6AB2442FEA30089D4FA /* Bird Sound.mp3 */,
+				7FE1D6B72442FEA30089D4FA /* Bright Future.mp3 */,
+				7FE1D6AD2442FEA30089D4FA /* Camfire.mp3 */,
+				7FE1D6A92442FEA30089D4FA /* Delta Waves.mp3 */,
+				7FE1D6AC2442FEA30089D4FA /* Early Morning.mp3 */,
+				7FE1D6AA2442FEA30089D4FA /* Enjoy Light.mp3 */,
+				7FE1D6BD2442FEA40089D4FA /* Flowing Water.mp3 */,
+				7FE1D6B42442FEA30089D4FA /* Happy Time.mp3 */,
+				7FE1D6B12442FEA30089D4FA /* Heavy Thunder.mp3 */,
+				7FE1D6BA2442FEA40089D4FA /* Lovely Journey.mp3 */,
+				7FE1D6AE2442FEA30089D4FA /* Magic Elf.mp3 */,
+				7FE1D6B22442FEA30089D4FA /* Missing You.mp3 */,
+				7FE1D6BB2442FEA40089D4FA /* Ocean Waves.mp3 */,
+				7FE1D6B62442FEA30089D4FA /* Peaceful Night.mp3 */,
+				7FE1D6B52442FEA30089D4FA /* Rainfall.mp3 */,
+				7FE1D6AF2442FEA30089D4FA /* River Flows.mp3 */,
+				7FE1D6B32442FEA30089D4FA /* Sleep Tight.mp3 */,
+				7FE1D6BC2442FEA40089D4FA /* Sunny Day.mp3 */,
+				7FE1D6A82442FEA30089D4FA /* Tropical Forest.mp3 */,
+				7FE1D6B02442FEA30089D4FA /* Waterfall.mp3 */,
+			);
+			name = Songs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,12 +272,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FE1D6C42442FEA40089D4FA /* Magic Elf.mp3 in Resources */,
+				7FE1D6BE2442FEA40089D4FA /* Tropical Forest.mp3 in Resources */,
 				4D45E431243C754500637259 /* LaunchScreen.storyboard in Resources */,
+				7FE1D6C62442FEA40089D4FA /* Waterfall.mp3 in Resources */,
+				7FE1D6D22442FEA40089D4FA /* Sunny Day.mp3 in Resources */,
+				7FE1D6CA2442FEA40089D4FA /* Happy Time.mp3 in Resources */,
+				7FE1D6C12442FEA40089D4FA /* Bird Sound.mp3 in Resources */,
+				7FE1D6C22442FEA40089D4FA /* Early Morning.mp3 in Resources */,
+				7FE1D6D32442FEA40089D4FA /* Flowing Water.mp3 in Resources */,
+				7FE1D6C72442FEA40089D4FA /* Heavy Thunder.mp3 in Resources */,
+				7FE1D6CE2442FEA40089D4FA /* Always.mp3 in Resources */,
+				7FE1D6C32442FEA40089D4FA /* Camfire.mp3 in Resources */,
+				7FE1D6C92442FEA40089D4FA /* Sleep Tight.mp3 in Resources */,
+				7FE1D6D12442FEA40089D4FA /* Ocean Waves.mp3 in Resources */,
 				4D45E42E243C754500637259 /* Assets.xcassets in Resources */,
 				4D45E43D243C79D200637259 /* MeditationStoryBoard.storyboard in Resources */,
 				4D45E42C243C754400637259 /* Main.storyboard in Resources */,
+				7FE1D6C02442FEA40089D4FA /* Enjoy Light.mp3 in Resources */,
+				7FE1D6C82442FEA40089D4FA /* Missing You.mp3 in Resources */,
+				7FE1D6CF2442FEA40089D4FA /* Bedtime Lullaby.mp3 in Resources */,
+				7FE1D6C52442FEA40089D4FA /* River Flows.mp3 in Resources */,
+				7FE1D6BF2442FEA40089D4FA /* Delta Waves.mp3 in Resources */,
 				4D45E43B243C782300637259 /* SoundStoryBoard.storyboard in Resources */,
+				7FE1D6CD2442FEA40089D4FA /* Bright Future.mp3 in Resources */,
+				7FE1D6CC2442FEA40089D4FA /* Peaceful Night.mp3 in Resources */,
 				4D45E43F243C7A6600637259 /* AlarmStoryBoard.storyboard in Resources */,
+				7FE1D6CB2442FEA40089D4FA /* Rainfall.mp3 in Resources */,
+				7FE1D6D02442FEA40089D4FA /* Lovely Journey.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +396,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -354,7 +450,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -369,7 +465,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z35HSPF5XB;
+				DEVELOPMENT_TEAM = H5YTZZ9RQ8;
 				INFOPLIST_FILE = Alarmy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -387,7 +483,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z35HSPF5XB;
+				DEVELOPMENT_TEAM = H5YTZZ9RQ8;
 				INFOPLIST_FILE = Alarmy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

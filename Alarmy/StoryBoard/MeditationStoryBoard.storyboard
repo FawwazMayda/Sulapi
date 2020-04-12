@@ -54,7 +54,7 @@
         <scene sceneID="oRx-jF-34T">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R09-jl-n8R" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Meditation" id="RI7-6S-hld"/>
+                    <tabBarItem key="tabBarItem" title="Meditation" image="meditation" id="RI7-6S-hld"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V9e-pX-MUW">
@@ -71,4 +71,7 @@
             <point key="canvasLocation" x="-65.217391304347828" y="144.64285714285714"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="meditation" width="32" height="32"/>
+    </resources>
 </document>

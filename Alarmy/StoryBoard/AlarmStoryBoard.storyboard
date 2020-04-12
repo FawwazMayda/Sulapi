@@ -81,7 +81,7 @@
         <scene sceneID="kdo-eT-Ada">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="u0Z-d5-cEs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Alarm" image="alarm" catalog="system" id="D4c-GC-eH7"/>
+                    <tabBarItem key="tabBarItem" title="Alarm" image="alarms" id="D4c-GC-eH7"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mBQ-uH-qzz">
@@ -99,6 +99,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="alarm" catalog="system" width="124" height="128"/>
+        <image name="alarms" width="32" height="32"/>
     </resources>
 </document>
